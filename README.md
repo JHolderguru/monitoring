@@ -10,11 +10,17 @@ In this option you would go and find an operator for Prometheus and deploy it in
 3. Using Helm chart to deploy the Prometheus Operator 🚀
 This is the most efficient way
 
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-
-helm install prometheus-community/kube-prometheus-stack --generate-name
-
-daemonset.apps/kube-prometheus-stack-1675437929-prometheus-node-exporter
+This gives you
+- Monitoring Stack
+- Configuration for the k8s cluster
 ```yaml
-translates worker Node metrics to Prometheus metrics
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+```
+```yaml
+helm install prometheus-community/kube-prometheus-stack --generate-name
+```
+```yaml
+#translates worker Node metrics to Prometheus metrics
+kubectl get all
+daemonset.apps/kube-prometheus-stack-1675437929-prometheus-node-exporter
 ```
