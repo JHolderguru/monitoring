@@ -9,3 +9,12 @@ This way is pretty inefficient and it's a lot of effort.
 In this option you would go and find an operator for Prometheus and deploy it in the cluster using the configuration files of the operator. It is more efficient.
 3. Using Helm chart to deploy the Prometheus Operator 🚀
 This is the most efficient way
+
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
+helm install prometheus-community/kube-prometheus-stack --generate-name
+
+daemonset.apps/kube-prometheus-stack-1675437929-prometheus-node-exporter
+```yaml
+translates worker Node metrics to Prometheus metrics
+```
